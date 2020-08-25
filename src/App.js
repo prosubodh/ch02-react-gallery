@@ -1,26 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Gallery from './components/Gallery'
+import ImagePopup from './components/ImagePopup'
+import { ImageProvider } from './contexts/ImageContext';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <ImageProvider>
+            <div className="App">
+                <Gallery />
+                <ImagePopup />
+            </div>
+        </ImageProvider>
+    );
 }
 
 export default App;
